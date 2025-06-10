@@ -18,7 +18,7 @@ export default function AddFoodRecipe(e) {
     const onHandleSubmit = async (e) => {             //don't forget to use async else you always face an issue as data wont upload instantly 
         e.preventDefault()
         console.log(recipeData)
-        await axios.post(" https://food-recipe-app-9aeddc513b74.herokuapp.com/recipe", recipeData,{
+        await axios.post(" https://food-recipe-render.onrender.com/recipe", recipeData,{
             headers:{
                 'Content-Type':'multipart/form-data',           
                 'authorization':'bearer '+localStorage.getItem("token")        //to verify this router with token so we can access it only after login

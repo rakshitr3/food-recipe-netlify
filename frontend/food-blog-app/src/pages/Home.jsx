@@ -17,7 +17,7 @@ export default function Home() {
     navigate("/addRecipe")
   }
   else{
-    setIsOpen(true)
+    setIsOpen(true)            //if user wont authorize then open dialog box
   }
 }
   return (

@@ -16,7 +16,7 @@ export default function EditRecipe(e) {                           //same as AddF
 
     useEffect(()=>{
         const getData=async()=>{
-            await axios.get(` https://food-recipe-app-9aeddc513b74.herokuapp.com/recipe/${id}`)    //first fetch the data by specific id or the user whose data we want to edit
+            await axios.get(` https://food-recipe-render.onrender.com/recipe/${id}`)    //first fetch the data by specific id or the user whose data we want to edit
             .then(response=>{
                 let res=response.data
                 setRecipeData({
@@ -36,7 +36,7 @@ export default function EditRecipe(e) {                           //same as AddF
     const onHandleSubmit = async (e) => {             //don't forget to use async else you always face an issue as data wont upload instantly 
         e.preventDefault()
         console.log(recipeData)
-        await axios.put(` https://food-recipe-app-9aeddc513b74.herokuapp.com/recipe/${id}`, recipeData,{
+        await axios.put(` https://food-recipe-render.onrender.com/recipe/${id}`, recipeData,{
             headers:{
                 'Content-Type':'multipart/form-data',           
                 'authorization':'bearer '+localStorage.getItem("token")        //to verify this router with token so we can access it only after login

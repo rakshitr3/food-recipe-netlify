@@ -24,7 +24,7 @@ export default function RecipeItems() {
 
   const onDelete=async(id)=>{
     //alert("Are you sure you want to delete this recipe!!")   but this wont contain cancel button
-    await axios.delete(` https://food-recipe-app-9aeddc513b74.herokuapp.com/recipe/${id}`)
+    await axios.delete(` https://food-recipe-render.onrender.com/recipe/${id}`)
     .then((res)=>console.log(res))
     setAllRecipes(recipes.filter(recipe=>recipe._id !== id))      //for refreshing the page once data deleted as component rerender on state change //updata part handled by EditRecipe.jsx
     let filterItem=favItems.filter(recipe=> recipe._id !== id)     //filter favItems array on same criteria as above with id given by user
@@ -46,7 +46,7 @@ export default function RecipeItems() {
           allRecipes?.map((item, index) => {
             return (
               <div key={index} className="card">
-                <img src={` https://food-recipe-app-9aeddc513b74.herokuapp.com/images/${item.coverImage}`} width="120px" height="100px" alt={item.title} />         {/* src={foodImg} for same image hardcoded As we made public folder static so we just use image here not public folder*/}
+                <img src={` https://food-recipe-render.onrender.com/images/${item.coverImage}`} width="120px" height="100px" alt={item.title} />         {/* src={foodImg} for same image hardcoded As we made public folder static so we just use image here not public folder*/}
                 <div className="card-body">
                   <div className="title">{item.title}</div>
                   <div className="icons">

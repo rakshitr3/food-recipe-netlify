@@ -10,7 +10,7 @@ import EditRecipe from './pages/EditRecipe';
 // Define the loader function that fetches the recipes
 const getAllRecipes = async () => {
   let allRecipes = [];
-  await axios.get(' https://food-recipe-app-9aeddc513b74.herokuapp.com/recipe')
+  await axios.get(' https://food-recipe-render.onrender.com/recipe')
     .then(res => {
       allRecipes = res.data;  // Make sure res.data contains the recipes
     })

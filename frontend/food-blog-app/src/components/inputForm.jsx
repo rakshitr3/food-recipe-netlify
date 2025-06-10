@@ -10,7 +10,7 @@ export default function InputForm({setIsOpen}) {           //this callback fn it
   const handleOnSubmit=async(e)=>{
     e.preventDefault()
     let endpoint=(isSignUp) ? "signUp" : "login"                //set endpoint according to user action tracked by isSignUp state
-    await axios.post(` https://food-recipe-app-9aeddc513b74.herokuapp.com/${endpoint}`,{email,password})            //send email,password given by user from setState to backend that backend will track using req.body
+    await axios.post(` https://food-recipe-render.onrender.com/${endpoint}`,{email,password})            //send email,password given by user from setState to backend that backend will track using req.body
     .then((res)=>{
         localStorage.setItem("token",res.data.token)                                        //check localStorage in inspect>application>storage>localStorage>http:localhost:5173
         localStorage.setItem("user",JSON.stringify(res.data.user))           //user and token we give in backend signUp and login route
